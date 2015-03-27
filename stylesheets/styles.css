@@ -41,6 +41,7 @@
 	-webkit-transition: opacity linear .3s;
     transition: opacity linear .3s;
     opacity: 0;
+    cursor: pointer;
 }
 
 .no-gut{
@@ -56,6 +57,7 @@
     -webkit-transition: opacity linear .3s;
     transition: opacity linear .3s;
     opacity: 0;
+    cursor: pointer;
 }
 
 .show-me {
