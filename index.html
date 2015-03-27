@@ -1,1 +1,66 @@
-Hello World
+<!doctype html>
+<html ng-app="vgio-demo">
+  <head>
+    <script src="libs/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+    <script src="vgio-demo.js"></script>
+    <script src="svg_elem.js"></script>
+    <script src="vgio_root.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="libs/bootstrap.min.js"></script>
+    <script src="libs/howler.min.js"></script>
+    <script src="libs/snap.svg-min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+   <div class="container" ng-controller="AccordionDemoCtrl">
+     <div class="row"></div>
+        <div class="row no-gut">
+          <vgio class="" vg-src="" vg-class="" audio-src="">
+            <vgio-h1 heading="(^)" from="1000" duration="13000" active="true">
+                <div class="intro-container">
+                  <ul class="intro-item">
+                    <li>github name : <a class="link-ref" href="https://github.com/moondram832001">moondram832001</a></li>
+                    <li>I have been into web app development for the last 1.5 yrs.</li>
+                  </ul>   
+               </div>
+            </vgio-h1>
+            <vgio-h1 heading="Frontend" from="13000" duration="53000">
+              <div class="intro-container">
+                <ul class="frontend-section">
+                  <li>HTML5</li>
+                  <li>CSS  -  Bootstrap / Sass / Bourbon</li>
+                  <li>Javascript - AngularJS / jQuery / WEBGL</li>
+                </ul>     
+              </div>
+            </vgio-h1>
+            <vgio-h1 heading="Backend" from="12000" duration="7000"  >
+              <div class="intro-container">
+                <ul class="backend-section">
+                  <li>Ruby on Rails - MySQL</li>
+                  <li>Nodejs - MongoDB</li>
+                </ul>     
+              </div>  
+            </vgio-h1>
+            <vgio-h1 heading="Testing" from="8000" duration="3000" >
+              <div class="intro-container">
+                <ul class="testing-section">
+                  <li>Jasmine</li>
+                  <li>Rspec / Cucumber / Capybara</li>
+                  <li>Automation - PhantomJS / Selenium</li>
+                </ul>     
+              </div>  
+            </vgio-h1>
+            <vgio-h1 heading="Tools/Open-source" from="4000" duration="3000">
+              <div class="intro-container">
+                <ul class="tools-section">
+                  <li>Version Control - Git</li>
+                  <li>Open-source -  <a class="link-ref" href="https://github.com/moondram832001/editide">editide</a> / <a class="link-ref" href="https://github.com/moondram832001/vgio">vgio</a></li>
+                </ul>     
+              </div>  
+            </vgio-h1>
+          </vgio> 
+       </div>
+    </div>
+ </body>
+</html>
