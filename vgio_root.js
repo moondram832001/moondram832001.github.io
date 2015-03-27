@@ -18,7 +18,7 @@ tt.directive('vgioRoot', function ($rootScope,$timeout,$window) {
         $scope.hit = "";
         $scope.vgio_style  = { "height" : ($window.innerHeight/2  ) + "px" };
         $scope.player_started = false;
-        $scope.transition_control = true;
+        $scope.transition_control = false;
 
         var promise;
 

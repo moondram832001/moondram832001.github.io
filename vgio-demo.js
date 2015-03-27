@@ -1,35 +1,22 @@
-var tt = angular.module('vgio-demo', []);
+var tt = angular.module('vgio-demo', ['angular-loading-bar']);
  tt.factory("resourceCache",["$cacheFactory",
     function($cacheFactory) { 
       return $cacheFactory("myData"); 
     }
   ]);
 
+tt.config(function(cfpLoadingBarProvider) {
+    cfpLoadingBarProvider.includeSpinner = false;
+});
+
 angular.module('vgio-demo').controller('AccordionDemoCtrl', function ($scope,$rootScope,$interval) {
-  $scope.oneAtATime = true;
-
-  $scope.groups = [
-    {
-      title: 'Dynamic Group Header - 1',
-      content: 'Dynamic Group Body - 1'
-    },
-    {
-      title: 'Dynamic Group Header - 2',
-      content: 'Dynamic Group Body - 2'
-    }
-  ];
-
-  $scope.items = ['Item 1', 'Item 2', 'Item 3'];
+   
   
   $rootScope.active_panel = "";
   $rootScope.scope_array = [];
   $scope.stack4 = 0;
 
-
-  $scope.addItem = function() {
-    var newItemNo = $scope.items.length + 1;
-    $scope.items.push('Item ' + newItemNo);
-  };
+ 
 
    $scope.callAtInterval = function() {
           
@@ -148,7 +135,7 @@ tt.directive('vgioH1', function ($rootScope,resourceCache,$interval) {
       }
       
        scope.$watch(function() { return controllers[1].checkDataReady();}, function(value) {
-              console.log("DATA READY!! "  + value);
+              console.log("DATA READ!! "  + value);
               scope.vg_data_ready = value;
 
               var ff = controllers[1].getHeight();
@@ -157,13 +144,12 @@ tt.directive('vgioH1', function ($rootScope,resourceCache,$interval) {
 
               panel_height = panel_height.toString() + "px";
               angular.element(iElm).find('#panel-body'+scope.indexer).css("height", "calc("+ff+" - ("+ panel_height+" * 5))"); 
+              //controllers[1].setTransitionState(false);
 
               if(scope.active_panel == "true" && scope.vg_data_ready) {
                   scope.linker.click();
+                  controllers[1].setTransitionState(true);
               }
-
-              controllers[1].setTransitionState(true);
-
        });      
 
         scope.countery = 25;
@@ -205,7 +191,7 @@ tt.directive('vgioH1', function ($rootScope,resourceCache,$interval) {
 
         scope.vg_play = function() {
              
-             controllers[1].setTransitionState(false);  
+              controllers[1].setTransitionState(false);  
               scope.howl_player.stop("sprite").play("sprite");
               scope.countery = scope.startframe;
 
